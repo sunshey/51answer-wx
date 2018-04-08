@@ -10,7 +10,7 @@ Page({
     page: 1,
     limit: 20,
     hasMoreData: true,
-    collect_sum_list: [],
+    collectList: [],//此处名字应和wxml名字一样
     loading: "flex",
     no_data: "none",
     display_tint: "none"
@@ -66,6 +66,7 @@ Page({
     if (this.data.hasMoreData) {
       this.getFavoriteList()
     }
+
   },
 
   /**
@@ -87,38 +88,42 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
-        var result = res.data
         console.log(res.data)
         that.data.loading = "none"
         that.data.display_tint = "none"
-        if (result.code == 1) {//获取数据
-          var result_data = result.data
-          if (result_data.lists) {
+        if (res.data.code == 1) {//获取数据
+          var result = res.data.data
+          var result_list = result.lists
+
+          if (result_list) {
+
             if (that.data.page == 1) {
-              that.data.collect_sum_list = []
+              that.data.collectList = []
             }
-            if (result_data.lists.length < that.data.limit) {
+            // console.log(that.data.page, that.data.collectList.concat(result_list))
+            if (result_list.length < 20) {
               that.data.no_data = "flex"
               that.data.hasMoreData = false
               that.setData({
-                sum: result_data.count,
-                collectList: that.data.collect_sum_list.concat(result_data.lists),
+                sum: result.count,
                 loading: that.data.loading,
                 no_data: that.data.no_data,
-                display_tint: that.data.display_tint
-
+                display_tint: that.data.display_tint,
+                collectList: that.data.collectList.concat(result_list),
               })
             } else {
               that.data.hasMoreData = true
-              that.data.page += 1
+              that.data.page = that.data.page + 1
+              that.data.no_data = "none"
               that.setData({
-                sum: result_data.count,
-                collectList: that.data.collect_sum_list.concat(result_data.lists),
+                sum: result.count,
                 loading: that.data.loading,
                 no_data: that.data.no_data,
-                display_tint: that.data.display_tint
+                display_tint: that.data.display_tint,
+                collectList: that.data.collectList.concat(result_list)
               })
             }
+           
           } else {
             that.data.no_data = "flex"
             that.setData({
