@@ -1,0 +1,54 @@
+.collect-sum {
+  display: flex;
+  padding: 40rpx;
+  font-size: 30rpx;
+}
+
+.sum {
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  color: #f14343;
+}
+
+.collect-out-container {
+  margin-left: 40rpx;
+}
+
+.collect-container {
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.collect-item {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  margin-right: 35rpx;
+  margin-bottom: 15rpx;
+  align-items: center;
+  justify-content: center
+
+}
+
+.image {
+  width: 100%;
+  height: 150rpx;
+}
+
+.item-title {
+  font-size: 25rpx;
+  text-align: center;
+  width: 100%;
+}
+
+.bottom-loading {
+  display: flex;
+  justify-content: center;
+  font-size: 25rpx;
+}
+.tint{
+  color: #f14343
+}

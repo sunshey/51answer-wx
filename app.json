@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/answer/index/index",
+    "pages/answer/filter/filter",
+    "pages/answer/collect/collect",
+    "pages/train/train",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/answer/search/search",
+    "pages/answer/search-detail/search-detail",
+    "pages/answer/answer-detail/answer-detail",
+    "pages/answer/scan-tint/scan-tint"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小学有答案",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#f00",
+    "color": "#aaa",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/answer/index/index",
+        "text": "首页",
+        "iconPath": "images/foot-home-icon.png",
+        "selectedIconPath": "images/foot-home-hovericon.png"
+      },
+      {
+        "pagePath": "pages/answer/filter/filter",
+        "text": "筛选",
+        "iconPath": "images/foot-screen-unselec.png",
+        "selectedIconPath": "images/foot-screen-icon.png"
+      },
+      {
+        "pagePath": "pages/answer/collect/collect",
+        "text": "收藏",
+        "iconPath": "images/foot-collection-icon.png",
+        "selectedIconPath": "images/foot-collection-hovericon.png"
+      }
+    ]
+  }
+}

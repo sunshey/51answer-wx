@@ -1,0 +1,44 @@
+<view class='small-container subject'>
+  <view class='title'>科目</view>
+  <view class='item-container' wx:if="{{subjects.length>0}}">
+    <view class='item' data-item='{{item.name}}' style='background-color: #{{item.color}}' wx:for="{{subjects}}" wx:key="{{item}}" bindtap='subjectclick'>
+      {{item.name}}
+    </view>
+  </view>
+  <view class='divider'></view>
+</view>
+
+<view class='small-container  grade'>
+
+  <view class='title'>年级</view>
+  <view class='item-container' wx:if="{{grades.length>0}}">
+    <view class='item' data-item='{{item.name}}' style='background-color: #{{item.color}}' wx:for="{{grades}}" wx:for-index="index" wx:key="{{item}} " bindtap='gradeclick'>
+      {{item.name}}
+    </view>
+  </view>
+  <view class='divider'></view>
+</view>
+
+<view class='small-container version'>
+  <view class='title'>版本</view>
+  <view class='item-container' wx:if="{{versions.length>0}}">
+    <view class='item' data-item='{{item.name}}' style='background-color: #{{item.color}}' wx:for="{{versions}}" wx:key="{{item}}" bindtap='versionclick'>
+      {{item.name}}
+    </view>
+  </view>
+  <view class='divider'></view>
+</view>
+
+<view class='small-container part'>
+  <view class='title'>上下册</view>
+  <view class='item-container' wx:if="{{parts.length>0}}">
+    <view class='item' data-item='{{item.name}}' style='background-color: #{{item.color}}' wx:for="{{parts}}" wx:key="{{item}}" bindtap='partclick'>
+      {{item.name}}
+    </view>
+  </view>
+</view>
+
+<view class='bottom-container'>
+  <button class='btn conirm' bindtap='confirm'>确认</button>
+  <button class='btn cancel' bindtap='cancel'>返回</button>
+</view>

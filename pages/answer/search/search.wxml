@@ -1,0 +1,49 @@
+
+<import src="../../../template/search.wxml"/>
+ <view class='search-form'>
+
+  <view class='search-container'>
+    <image class='search-icon' src='../../../images/search-icon1.png'></image>
+
+    <input class='search-content' type='text' placeholder="请输入您要查找的书籍名称" focus confirm-type="search" value="{{inputtext}}" bindinput="getInputValue"></input>
+    <image class='search-delete-icon' style='display:{{delete_display}}' bindtap='delete' src='../../../images/search-cancel-icon.png'></image>
+  </view>
+  <view class='search-btn' hover-class="hover-bg" hover-stay-time='100' bindtap='search'>搜索</view>
+</view> 
+<!-- <template is="search-template" /> -->
+<view class='search-tint-list' wx:if="{{searchlist.length>0}}">
+  <view data-text='{{item}}' class='search-tint-container' wx:for="{{searchlist}}" wx:key="{{item}}" bindtap='search'>
+    <view class='search-tint-item'>
+      <image class='search-tint-icon' src='../../../images/search-icon1.png'></image>
+      <view class='search-tint-content'>{{item}}</view>
+      <image class='search-tint-right-icon' src='../../../images/search-icon2.png'></image>
+    </view>
+    <view class='line'></view>
+  </view>
+</view>
+
+
+<view class='search-history-container' style='display:{{container_display}}'>
+  <view class='hot-search-container'>
+    <view class='hot-search-title'>热门搜索</view>
+    <view class='hot-search-flag' wx:if="{{hotflags.length>0}}">
+      <view data-text="{{item.text}}" class='hot-search-item' wx:for="{{hotflags}}" wx:key="{{item}}" style='background-color: {{item.item_bg}}' bindtap='search'>
+        {{item.text}}
+      </view>
+    </view>
+  </view>
+  <view class='divider'></view>
+  <view class='hot-search-container'>
+    <view class='history-top'>
+      <view class='history-title'>搜索记录</view>
+      <view class='delete-histoty' bindtap='deletehistroy'>
+        <image class='delete-icon' src='../../../images/deleted-icon.png'></image>删除
+      </view>
+    </view>
+    <view class='hot-search-flag' wx:if="{{historylist.length>0}}">
+      <view data-text="{{item}}" class='hot-search-item history-item' wx:for="{{historylist}}" wx:key="{{item}}" bindtap='search'>
+        {{item}}
+      </view>
+    </view>
+  </view>
+</view>

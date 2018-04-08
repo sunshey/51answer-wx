@@ -1,0 +1,47 @@
+.search-form {
+  display: flex;
+  height: 70rpx;
+  width: 100%;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-top: 40rpx;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-container {
+  display: flex;
+  border-radius: 5rpx;
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #aaa;
+  width: 80%;
+  height: 70rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  align-items: center;
+}
+
+.search-icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.search-content {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  color: #aaa;
+  flex-grow: 1;
+}
+
+.search-delete-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.search-btn {
+  width: 20%;
+  font-size: 35rpx;
+  color: #aaa;
+  margin-left: 15rpx;
+}
