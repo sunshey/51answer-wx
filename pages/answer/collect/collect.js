@@ -34,7 +34,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getFavoriteList()
+    // this.data.page = 1
+    if (this.data.hasMoreData)
+      this.getFavoriteList()
   },
 
   /**
@@ -55,7 +57,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.data.page = 1
+    // this.data.page = 1
     this.getFavoriteList()
   },
 
@@ -77,6 +79,7 @@ Page({
   },
   getFavoriteList: function () {
     var that = this
+    console.log(this.data.page, this.data.hasMoreData)
     wx.request({
       url: globalData.bookmyfavoriteUrl,
       data: {
@@ -100,7 +103,7 @@ Page({
             if (that.data.page == 1) {
               that.data.collectList = []
             }
-            // console.log(that.data.page, that.data.collectList.concat(result_list))
+            console.log(that.data.page, that.data.collectList.concat(result_list))
             if (result_list.length < 20) {
               that.data.no_data = "flex"
               that.data.hasMoreData = false
@@ -123,7 +126,7 @@ Page({
                 collectList: that.data.collectList.concat(result_list)
               })
             }
-           
+
           } else {
             that.data.no_data = "flex"
             that.setData({
@@ -133,7 +136,7 @@ Page({
             })
           }
 
-        } else if (result.code == 401) {
+        } else if (res.data.code == 401) {
           wx.showModal({
             title: '提示',
             content: '查看收藏列表需要先登录',

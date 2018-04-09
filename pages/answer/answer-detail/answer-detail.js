@@ -36,6 +36,13 @@ Page({
     // console.error(JSON.parse(options.item).id)
     this.getAnswerDetail()
 
+    wx.getSystemInfo({
+      success: function (res) { 
+        console.log(res.screenWidth)
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
 
   /**

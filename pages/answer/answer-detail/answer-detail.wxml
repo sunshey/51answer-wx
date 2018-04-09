@@ -14,6 +14,7 @@
         <view class='indicator' style='display:{{item.display}}'></view>
       </view>
     </view>
+
   </view>
 </view>
 <!--中间-->
@@ -26,7 +27,7 @@
   </block>
 </swiper>
 <!-- </view> -->
- <view class='middle-divider'></view> 
+<view class='middle-divider'></view>
 <!--底部-->
 <view class='bottom-contanier'>
   <button class='btn-share' hover-class='btn-hover-class' open-type='getUserInfo' style='color:#{{collect_color}}' bindgetuserinfo='getUserInfo'>

@@ -74,7 +74,7 @@ Page({
   },
   preview: function () {
     wx.previewImage({
-      urls: ["https://anspic.bshu.com/answers/E0F907A9B54569D773E1424F62C6EFA6.jpg",    
+      urls: ["https://anspic.bshu.com/answers/E0F907A9B54569D773E1424F62C6EFA6.jpg",
         "https://anspic.bshu.com/answers/87533258CDD498826532E3B5C64CE800.jpg",
         "https://anspic.bshu.com/answers/693DB0C1C97FD2A94B6BA47B6AAD8F3C.jpg",
         "https://anspic.bshu.com/answers/8CC6E30FC4C6B0D6A59E1DCD832B06DF.jpg",
@@ -85,6 +85,14 @@ Page({
         "https://anspic.bshu.com/answers/2011_9.jpg",
         "https://anspic.bshu.com/answers/2011_10.jpg",
         "https://anspic.bshu.com/answers/2011_11.jpg"],
+    })
+  },
+  test: function () {
+    wx.navigateTo({
+      url: '../testview/testview',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   }
 })

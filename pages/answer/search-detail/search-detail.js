@@ -94,6 +94,7 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
+        wx.stopPullDownRefresh()
         console.log(res.data, res.data.data)
         if (res.data.code == 1) {
           var result = res.data.data
@@ -147,7 +148,7 @@ Page({
         }
 
       },
-      fail: function (res) { }
+      fail: function (res) { wx.stopPullDownRefresh() }
     })
   },
   /**

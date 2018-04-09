@@ -1,0 +1,22 @@
+.swiper {
+  width: 100%;
+}
+
+.swiper-item {
+  width: 50rpx;
+  height: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.text {
+  font-size: 25rpx;
+}
+
+.indicator {
+  width: 25rpx;
+  background-color: #f00;
+  height: 0.5rpx;
+}
+

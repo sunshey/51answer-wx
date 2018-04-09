@@ -1,0 +1,15 @@
+<swiper style='width:{{swiper.width}}' class='swiper' bindtap='getViewWidth'>
+  <block wx:for='{{itemlist}}' wx:key='{{item}}'>
+    <swiper-item class='swiper-item' >
+      <view class='text'>
+        {{item.text}}
+      </view>
+      <view class='indicator' style='display:{{item.display}}'></view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<slider block-size='12' show-value ></slider>
+
+<!-- <open-data type='groupName' open-gid='123456'></open-data> -->
+<open-data class='avatar' type='userAvatarUrl'> </open-data>
