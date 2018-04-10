@@ -34,7 +34,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.data.page = 1
+ 
     if (this.data.hasMoreData)
       this.getFavoriteList()
   },
@@ -57,7 +57,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    // this.data.page = 1
+    this.data.page = 1
     this.getFavoriteList()
   },
 
@@ -91,6 +91,7 @@ Page({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
+        wx.stopPullDownRefresh()
         console.log(res.data)
         that.data.loading = "none"
         that.data.display_tint = "none"
@@ -169,7 +170,7 @@ Page({
           })
         }
       },
-      fail: function (res) { },
+      fail: function (res) { wx.stopPullDownRefresh()},
       complete: function (res) { },
     })
   },

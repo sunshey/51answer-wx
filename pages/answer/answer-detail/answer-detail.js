@@ -20,7 +20,8 @@ Page({
     answer_info: {},
     favorite: 0,//保存收藏状态
     collect_color: "",
-    isCollectClick: false
+    isCollectClick: false,
+    // isshow:false
   },
 
   /**
@@ -157,9 +158,11 @@ Page({
             if (i == 0) {
               sum_page_item["color"] = "f14343"
               sum_page_item["display"] = "flex"
+              // that.data.isshow=true
             } else {
               sum_page_item["color"] = "000"
               sum_page_item["display"] = "none"
+              // that.data.isshow = false
             }
             sum_page_item["text"] = i + 1
             that.data.sum_pages.push(sum_page_item)
@@ -171,7 +174,8 @@ Page({
             current_page: that.data.current_page + 1,
             sum_pages: that.data.sum_pages,
             images: answer_list,
-            collect_icon: that.data.collect_icon
+            collect_icon: that.data.collect_icon,
+            // isshow:that.data.isshow
           })
         }
 

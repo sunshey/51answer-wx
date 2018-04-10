@@ -82,4 +82,11 @@ Page({
   getViewWidth:function(e){
     console.error(e.detail.width)
   }
+  ,
+  changeswiper:function(e){
+    console.log(e)
+  },
+  markertap:function(options){
+    console.log(options)
+  }
 })

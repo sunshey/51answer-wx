@@ -21,9 +21,9 @@ Page({
         url: '../answer-detail/answer-detail?book_id=' + options.book_id,
       })
     }
-   
-    this.getUserInfoData()
 
+    this.getUserInfoData()
+    // console.log(this.route) route 可以获取当前页面路径
 
 
     wx.request({
@@ -127,7 +127,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -153,7 +153,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
@@ -183,6 +183,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   /**
    * 跳转到搜索页
    */

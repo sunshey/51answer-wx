@@ -34,6 +34,17 @@ App({
       }
     })
   },
+  onShow: function (options) {
+    console.log("app,onShow",options)
+    // wx.switchTab({
+    //   url: 'pages/answer/index/index',
+    //   success: function(res) {
+    //     console.log("success",res)
+    //   },
+    //   fail: function (res) { console.log(res)},
+    //   complete: function(res) {},
+    // })
+  },
   globalData: {
     userInfo: null,
     ticketUrl: "https://kyfw.12306.cn/otn/leftTicket/queryO",

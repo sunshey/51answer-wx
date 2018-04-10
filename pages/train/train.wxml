@@ -2,7 +2,7 @@
 
 
 <view class='container'>
-   <template is="common" class="common"/> 
+   <template is="common"/> 
   <view class='query'>
     <form bindsubmit='query'>
       <!--输入查找地点、时间来查找火车票信息-->

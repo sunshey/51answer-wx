@@ -12,6 +12,7 @@
       <view class='page-guide-item' wx:for='{{sum_pages}}' wx:for-item="item" wx:key='{{item}}' style='color:#{{item.color}}'>
         {{item.text}}
         <view class='indicator' style='display:{{item.display}}'></view>
+
       </view>
     </view>
 

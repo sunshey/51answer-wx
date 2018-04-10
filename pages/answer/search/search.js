@@ -187,6 +187,14 @@ Page({
     var history = wx.getStorageSync("history")
     console.log(history)
 
+    // console.log("json", typeof (JSON.parse(history)))
+    // var historylist = JSON.parse(history)
+    // if (historylist.indexof(input) < 0) {
+    //   historylist.push(input)
+    // }
+    // wx.setStorageSync("history", JSON.stringify(historylist))
+   
+
     var historylist = []
     if (history.length > 0) {
       historylist = history.split('-')
@@ -197,11 +205,15 @@ Page({
       utils.saveList(historylist)
     }
 
+
+    console.log("mess", JSON.stringify(historylist))
+
+
     wx.navigateTo({//跳转到搜索页
       url: '../search-detail/search-detail?flag=' + input,
     })
 
-   
+
 
   },
   deletehistroy: function () {

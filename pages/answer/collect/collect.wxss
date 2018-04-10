@@ -10,7 +10,6 @@
   color: #f14343;
 }
 
-
 .collect-container {
   display: flex;
   height: 100%;
@@ -18,6 +17,10 @@
   margin-left: 40rpx;
   align-items: flex-end;
 }
+
+/* opacity 透明度
+transition 过渡属性变化
+ */
 
 .collect-item {
   display: flex;
@@ -27,8 +30,8 @@
   margin-right: 35rpx;
   margin-bottom: 15rpx;
   align-items: center;
-  justify-content: center
-
+  justify-content: center;
+  transition: opacity 0.3s ease-in;
 }
 
 .image {
@@ -48,6 +51,7 @@
   font-size: 25rpx;
   margin-bottom: 10rpx;
 }
-.tint{
-  color: #f14343
+
+.tint {
+  color: #f14343;
 }
