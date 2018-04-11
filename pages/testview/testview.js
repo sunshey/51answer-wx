@@ -4,16 +4,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    itemlist: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    this.itemlist = this.getData()
     this.setData({
-      itemlist: this.getData()
+      itemlist: this.itemlist
     })
   },
 
@@ -79,14 +79,25 @@ Page({
     }
     return list
   },
-  getViewWidth:function(e){
+  getViewWidth: function (e) {
     console.error(e.detail.width)
   }
   ,
-  changeswiper:function(e){
+  changeswiper: function (e) {
     console.log(e)
   },
-  markertap:function(options){
+  markertap: function (options) {
     console.log(options)
+  },
+  scroll: function (e) {
+    let itemlist = this.itemlist
+    for (let i = 0; i < itemlist.length; i++) {
+
+    }
+
+    this.setData({
+
+    })
+    console.log(Math.round(e.detail.scrollLeft / 30))
   }
 })

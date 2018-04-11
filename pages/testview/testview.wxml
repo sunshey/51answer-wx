@@ -1,14 +1,25 @@
 <swiper style='width:{{swiper.width}}' class='swiper' bindtap='getViewWidth' bindchange='changeswiper'>
-  <block wx:for='{{itemlist}}' wx:key='{{item}}'>
-    <swiper-item class='swiper-item'>
+  <block class="swiper-item" wx:for='{{itemlist}}' wx:key='{{item}}'>
+    <swiper-item>
       <view class='text'>
         {{item.text}}
       </view>
       <view class='indicator' style='display:{{item.display}}'></view>
     </swiper-item>
+
   </block>
+
 </swiper>
-<scroll-view scroll-x></scroll-view>
+<view class='swiperview'></view>
+
+
+
+<scroll-view class='scrollview' scroll-left='200' scroll-x bindscroll='scroll'>
+  <view class='item-list' wx:for='{{itemlist}}' wx:key='*item'>
+    {{item.text}}
+    <view class='indicator' style='display:{{item.display}}'></view>
+  </view>
+</scroll-view>
 
 
 <slider block-size='12' show-value></slider>
