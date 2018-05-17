@@ -40,8 +40,145 @@
 
 技术说明
 ---
+小程序使用wxml、wxss、json、js这四种类型的文件来编写，wxml相当于html，wxss相当于css,json是配置文件，js负责函数调用和逻辑处理，语法和使用参考文档。
 
 注意事项
 ---
+1. 使用下拉刷新动画，需在app.json文件中配置"backgroundColor":"#F5F5F5"，因为小程序背景为白色，动画样式也为白色，因此动画样式无法看见<br/> 
+2. 在app.wxss中配置默认全局css样式，可以在page的wxss中选择覆盖，或者将/* padding: 200rpx 0; */属性注释，否则会出现意想不到的结果<br/> 
+3. 在tabBar里配置的页面必须在pages里注册且只能通过 wx.switchTab()进行切换<br/> 
+4. navigateTo是跳到某个非tab页，比如详情页；在app.json中注册后，不能在tabBar里注册哦，不然同样也是不能跳转的哦。<br/> 
+5. json中不能写注释哦，不然会报错的。<br/> 
+6. 页面之间传递参数，参数写在跳转的url之中，然后另一个页面在onload方法中的传参option接收到。如下传递和获取id<br/> 
+ ```
+ onLoad: function (options) {
+    		// var info = JSON.parse(options.item)
+   		 // this.data.book_id = info.id
+    	this.data.book_id = options.book_id}
+ ```
+7. data-开头的自定义属性的使用<br/> 
+比如wxml中我们写 data-item='{{item}}' 点击的事件对象可以这么取，
+```
+toanswerdetail: function (e) {
+    var item = e.currentTarget.dataset.item
+    // console.log(item)
+    wx.navigateTo({
+      url: '../answer-detail/answer-detail?book_id=' + item.id// JSON.stringify(item),
+    })
+}
+```
+注意： 大写会转换成小写，带_符号会转成驼峰形式<br/> 
+8. 事件对象event，event.target和event.currentTarget的区别：<br/> 
+target指的是当前点击的组件 和currentTarget 指的是事件捕获的组件。<br/> 
+比如，轮播图组件，点击事件应该要绑定到swiper上，这样才能监控任意一张图片是否被点击，<br/> 
+这时target这里指的是image（因为点击的是图片），而currentTarget指的是swiper（因为绑定点击事件在swiper上）<br/> 
+9. 网络请求的域名需在小程序后台配置，且以https开头
+
+10. app.js为全局的js文件，globalData字段定义了全局的常量，可以将网络请求的URL地址定义在这里，建议这样做，<br/> 
+```
+ globalData: {
+    userInfo: null,
+    ticketUrl: "https://kyfw.12306.cn/otn/leftTicket/queryO",
+    startPlaceholder: "请输入出发的城市",
+    arrivePlaceholder: "请输入到达的城市",
+    starttimeholder: "请选择出发时间",
+    slideUrl: "https://answer.bshu.com/v1/slide/index",
+    hotbookUrl: "https://answer.bshu.com/v1/book/index",
+    hotrecommendUrl: "https://answer.bshu.com/v1/book/tag",
+    searchtintUrl: "https://answer.bshu.com/v1/book/tip",
+    answerdetailUrl: "https://answer.bshu.com/v1/book/answer",
+    favoriteUrl: "https://answer.bshu.com/v1/book/favorite",
+    wxappUrl: "https://answer.bshu.com/v1/user/wxapp",
+    bookversionUrl: "https://answer.bshu.com/v1/book/version",
+    bookmyfavoriteUrl: "https://answer.bshu.com/v1/book/myfavorite"
+}
+```
+各个页面的js文件中通过var app= getApp()获取这个全局js文件，从而获取这里定义的常量<br/> 
+```
+var app = getApp()
+var globalData = app.globalData
+wx.request({
+     url: globalData.hotrecommendUrl,
+.....
+}
+```
+11. 使用通用方法——可以单独定义一个utils目录，在里面定义utils.js,将经常使用的方法定义在这里，如图：
+```
+function getUserinfos(callback) {//获取用户信息
+  var that = this
+  wx.getUserInfo({
+    withCredentials: true,
+    lang: '',
+    success: function (res) {
+      console.log(res)
+      that.loginserver(wx.getStorageSync("token"), res.userInfo.nickName, res.userInfo.avatarUrl, callback)
+    },
+    fail: function (res) {
+      wx.showModal({
+        title: '提示',
+        content: '授权拒绝将无法使用收藏功能，请谨慎选择',
+        showCancel: false,
+        cancelText: '',
+        cancelColor: '',
+        confirmText: '确认',
+        confirmColor: '',
+        success: function (res) {
+          wx.openSetting({
+            success: function (res) {
+              if (res.authSetting["scope.userInfo"]) {
+                that.getUserinfos()
+              }
+            },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
+
+
+    },
+    complete: function (res) {
+      console.debug(res)
+    },
+  })
+
+}
+```
+通过
+```
+module.exports = {
+  getCityCode: getCityCode,
+  getCityName: getCityName,
+  stringToJson: stringToJson,
+  saveList: saveList,
+  getHeaders: getHeaders,
+  loginserver: loginserver,
+  getUserinfos: getUserinfos,
+}
+```
+将方法注册，在需要使用该方法的js文件中通过 var utils = require('../../../utils/util.js') ，来使用utils.js中注册的方法<br/> 
+12. 使用通用模板——单独定义template目录，在目录中添加通用模板文件，如图：<br/> 
+```
+<template name="common">
+  <view class='common_test'>
+    这是一个通用模板
+  </view>
+</template>
+```
+ 在需要使用该模板的wxml文件中通过import关键字导入该模板，
+ ```
+ <import src="../../template/common.wxml" />
+ ```
+ 并在合适的位置加入该模板  
+ ```
+<template is="common" data='{{...item}}'/>
+```
+is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
+13. 如果模板文件中import其他模板，如果想使用模板的引入的模板文件，可以通过include关键字<br/>
+14. 使用通用样式——直接在需要样式的wxss文件中通过@import "../../../template/search.wxss";导入即可<br/>
+15. 各个页面js文件Page实例中，可以通过this.route获取当前打开的路径  
+
 总结
 ---
