@@ -47,8 +47,8 @@
 1. 使用下拉刷新动画，需在app.json文件中配置"backgroundColor":"#F5F5F5"，因为小程序背景为白色，动画样式也为白色，因此动画样式无法看见<br/> 
 2. 在app.wxss中配置默认全局css样式，可以在page的wxss中选择覆盖，或者将/* padding: 200rpx 0; */属性注释，否则会出现意想不到的结果<br/> 
 3. 在tabBar里配置的页面必须在pages里注册且只能通过 wx.switchTab()进行切换<br/> 
-4. navigateTo是跳到某个非tab页，比如详情页；在app.json中注册后，不能在tabBar里注册哦，不然同样也是不能跳转的哦。<br/> 
-5. json中不能写注释哦，不然会报错的。<br/> 
+4. navigateTo是跳到某个非tab页，比如详情页；在app.json中注册后，不能在tabBar里注册，不然同样也是不能跳转的哦。<br/> 
+5. json中不能写注释，不然会报错的。<br/> 
 6. 页面之间传递参数，参数写在跳转的url之中，然后另一个页面在onload方法中的传参option接收到。如下传递和获取id<br/> 
  ```
  onLoad: function (options) {
