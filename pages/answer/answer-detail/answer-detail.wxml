@@ -1,0 +1,45 @@
+<!-- <view class='container'> -->
+<view class='top'>
+  <view class='answer-title'>{{answer_title}}</view>
+  <!--顶部-->
+  <view class='answer-detail-container'>
+    <view class='top-page-guide'>
+      <view class='current-page'>{{current_page}}</view>/
+      <view class='sum-page'>{{sum_page}}</view>
+    </view>
+    <!-- <view class='divider'></view> -->
+    <view class='page_guide-item_container' wx:if='{{sum_pages.length>0}}'>
+      <view class='page-guide-item' wx:for='{{sum_pages}}' wx:for-item="item" wx:key='{{item}}' style='color:#{{item.color}}'>
+        {{item.text}}
+        <view class='indicator' style='display:{{item.display}}'></view>
+
+      </view>
+    </view>
+
+  </view>
+</view>
+<!--中间-->
+<!-- <view class='swiper-container'> -->
+<swiper current="{{current}}" class='swiper' bindchange="changeswiper">
+  <block wx:for="{{images}}" wx:key='{{item}}'>
+    <swiper-item>
+      <image class='image' data-url='{{item}}' src='{{item}}' lazy-load mode='aspectFit' bindtap='previewimag'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- </view> -->
+<view class='middle-divider'></view>
+<!--底部-->
+<view class='bottom-contanier'>
+  <button class='btn-share' hover-class='btn-hover-class' open-type='getUserInfo' style='color:#{{collect_color}}' bindgetuserinfo='getUserInfo'>
+    <image class='collect-icon' src='{{collect_icon}}'></image>{{collect}}</button>
+
+  <button class='btn-share' hover-class='btn-hover-class' bindtap='download'>
+    <image class='down-icon' src='../../../images/down-icon.png'></image>{{download}}</button>
+
+  <button class='btn-share' hover-class='btn-hover-class' open-type='share'>
+    <image class='share-icon' src='../../../images/share-icon.png'></image>{{share}}</button>
+
+</view>
+
+<!-- </view> -->

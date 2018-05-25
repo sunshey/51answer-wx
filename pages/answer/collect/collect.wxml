@@ -1,0 +1,18 @@
+<view class='collect-sum'>
+  共收藏
+  <view class='sum'>{{sum}}</view>本书
+</view>
+
+
+<view class='collect-container' wx:if="{{collectList.length>0}}">
+  <view data-item='{{item.id}}' class='collect-item' wx:for='{{collectList}}' wx:key='{{item.id}}' bindtap='toAnswerDetail'>
+    <image class='image' mode='widthFix' src='{{item.cover_img}}'></image>
+    <view class='item-title'>{{item.name}}</view>
+  </view>
+</view>
+
+<view class='bottom-loading'>
+  <view style='display:{{loading}}'>正在加载中...</view>
+  <view style='display:{{no_data}}'>亲，我也是有底线的</view>
+  <view class='tint' style='display:{{display_tint}}' bindtap='login'>{{tint}}</view>
+</view>

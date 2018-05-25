@@ -1,0 +1,58 @@
+<view class='search-form'>
+
+  <view class='search-container'>
+    <image class='search-icon' src='../../../images/search-icon1.png'></image>
+
+    <input class='search-content' type='text' placeholder="{{flag}}" focus confirm-type="search" value="{{inputtext}}" bindinput="getInputValue"></input>
+    <image class='search-scancode-icon' style='display:{{delete_display}}' bindtap='scan' src='../../../images/scancode-icon.png'></image>
+  </view>
+  <view class='search-btn' hover-class="hover-bg" hover-stay-time='100' bindtap='search'>搜索</view>
+</view>
+
+<view class='book-sum-top-container'>
+  <view class='book-sum-container'>
+    <view class='book-sum'>
+      共找到
+      <view class='book-num'>{{sum}}</view>本
+    </view>
+    <view class='book-filter' bindtap='filter'>
+      <image class='screen-icon' src='../../../images/screen-icon.png'></image>
+      筛选
+    </view>
+
+  </view>
+  <view class='divider'></view>
+</view>
+<view class='book-list'>
+
+  <view wx:if="{{booklist.length>0}}">
+    <view data-item='{{item}}' class='book-item' wx:for="{{booklist}}" wx:key="id" bindtap='toAnswerDetail'>
+      <view class='book-item-content-container'>
+        <image mode='widthFix' class='book-cover' src='{{item.cover_img}}'></image>
+        <view class='book-item-content'>
+          <view class='book-item-title'>{{item.name}}</view>
+          <view class='book-item-flag-container'>
+            <view class='book-item-flag' wx:for="{{item.flag}}" wx:for-item='name' wx:key='name'>
+              {{name}}
+            </view>
+          </view>
+          <view class='book-item-bottom'>
+            <view class='book-item-autor-icon'>
+              <image class='user-icon' src='../../../images/user-icon-1.png'></image>
+              <view class='book-item-time'>{{item.author}}</view>
+            </view>
+            <view class='book-item-time'>{{item.time}}</view>
+          </view>
+
+        </view>
+      </view>
+      <view class='book-item-divider'></view>
+    </view>
+
+    <view class='book-load-more'>
+      <view style='display:{{no_data}}'>亲，我也是有底线的</view>
+      <label style='display:{{loading}}'>正在加载中...</label>
+    </view>
+  </view>
+
+</view>

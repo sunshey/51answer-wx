@@ -1,0 +1,140 @@
+@import "../../../template/search.wxss";
+
+.search-scancode-icon {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.book-sum-top-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-sum-container {
+  display: flex;
+  justify-content: center;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.book-sum {
+  display: flex;
+  flex-grow: 1;
+  font-size: 30rpx;
+  color: #aaa;
+}
+
+.book-num {
+  color: #f14343;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.screen-icon {
+  width: 34rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.book-filter {
+  display: flex;
+  font-size: 30rpx;
+  align-items: center;
+}
+
+.divider {
+  height: 1rpx;
+  background-color: #ccc;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-item-content-container {
+  display: flex;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+  align-items: center;
+}
+
+.book-cover {
+  width: 106rpx;
+  height: 150rpx;
+}
+
+.book-item-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 30rpx;
+}
+
+.book-item-title {
+  font-size: 32rpx;
+}
+
+.book-item-flag-container {
+  display: flex;
+}
+
+.book-item-flag {
+  display: flex;
+  font-size: 20rpx;
+  /* width: 120rpx; */
+  border-radius: 20rpx;
+  background-color: #ccc;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-top: 15rpx;
+  justify-content: center;
+}
+
+.book-item-bottom {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.user-icon {
+  width: 22rpx;
+  height: 21rpx;
+  margin-right: 10rpx;
+}
+
+.book-item-autor-icon {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.book-item-time {
+  font-size: 25rpx;
+  color: #aaa;
+}
+
+.book-item-divider {
+  background-color: #aaa;
+  height: 1px;
+}
+
+.book-load-more {
+  display: flex;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+  color: #ccc;
+  justify-content: center;
+}

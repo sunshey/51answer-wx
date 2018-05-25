@@ -1,0 +1,11 @@
+<template name="search-template">
+  <view class='search-form'>
+    <view class='search-container'>
+      <image class='search-icon' src='../../../images/search-icon1.png'></image>
+
+      <input class='search-content' type='text' placeholder="请输入您要查找的书籍名称" focus confirm-type="search" value="{{inputtext}}" bindinput="getInputValue"></input>
+      <image class='search-delete-icon' style='display:{{delete_display}}' bindtap='delete' src='../../../images/search-cancel-icon.png'></image>
+    </view>
+    <view class='search-btn' hover-class="hover-bg" hover-stay-time='100' bindtap='search'>搜索</view>
+  </view>
+</template>

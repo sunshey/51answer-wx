@@ -1,0 +1,42 @@
+<swiper style='width:{{swiper.width}}' class='swiper' bindtap='getViewWidth' bindchange='changeswiper'>
+  <block class="swiper-item" wx:for='{{itemlist}}' wx:key='{{item}}'>
+    <swiper-item>
+      <view class='text'>
+        {{item.text}}
+      </view>
+      <view class='indicator' style='display:{{item.display}}'></view>
+    </swiper-item>
+
+  </block>
+
+</swiper>
+<view class='swiperview'></view>
+
+
+
+<scroll-view class='scrollview' scroll-left='200' scroll-x bindscroll='scroll'>
+  <view class='item-list' wx:for='{{itemlist}}' wx:key='*item'>
+    {{item.text}}
+    <view class='indicator' style='display:{{item.display}}'></view>
+  </view>
+</scroll-view>
+
+<!--http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400-->
+<video src='https://v.qq.com/x/cover/y6hdzchhaapdqtp.html'></video>
+
+<slider block-size='12' show-value></slider>
+
+<!-- <open-data type='groupName' open-gid='123456'></open-data> -->
+<!-- <open-data class='avatar' type='userAvatarUrl'> </open-data> -->
+<map latitude='30.478017' longitude='114.327254' show-location bindtap='markertap'></map>
+
+<view wx:for="{{[0,1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+  <view wx:for="{{[0,1,2,3,4,5,6,7,8,9]}}" wx:for-item="j">
+    <view wx:if="{{i}}<={{j}}">
+
+      {{i}} * {{j}} = {{i * j}}
+    </view>
+
+  </view>
+
+</view>

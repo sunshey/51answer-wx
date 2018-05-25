@@ -1,0 +1,7 @@
+<view>
+  <button type='primary' bindtap='navigationClick'> 跳转 </button>
+  <navigator open-type='navigate' url='../logs/logs?title=switchTab'>navigator</navigator>
+  <button type='primary' bindtap='preview'>预览图片</button>
+  <navigator open-type='switchTab' url='../answer/index/index?title=test'>跳转到答案首页</navigator>
+  <button type='primary' bindtap='test'>跳转到测试页面</button>
+</view>

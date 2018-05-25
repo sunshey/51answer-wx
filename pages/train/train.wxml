@@ -1,0 +1,83 @@
+<import src="../../template/common.wxml" />
+
+
+<view class='container'>
+   <template is="common"/> 
+  <view class='query'>
+    <form bindsubmit='query'>
+      <!--输入查找地点、时间来查找火车票信息-->
+      <view class='start_place'>
+        <view>出发地</view>
+        <view class='place_container'>
+          <input placeholder='{{start_placeholder}}' type='text' class='place_input' auto-focus confirm-type='next' bindinput='getPlace' name="start_city"></input>
+        </view>
+        <view class='tip'>{{tip}}</view>
+      </view>
+
+      <view class='arrive_place'>
+        <view>到达地</view>
+        <view class='place_container'>
+          <input placeholder='{{arrive_placeholder}}' type='text' class='place_input' confirm-type='next' bindinput='getPlace' name="arrive_city"></input>
+        </view>
+        <view class='tip'>{{arrive_tip}}</view>
+      </view>
+      <view class='start_time'>
+        <view>出发时间</view>
+        <picker mode="date" value='{{date}}' start="2015-09-01" end="2050-01-01" bindchange="bindDateChange">
+          <view class='time_container'>
+            <input placeholder='{{start_timeholder}}' class='time_input' value='{{date}}' disabled name="start_time"></input>
+            <image src='../../images/calander.png' class='calander' bindtap='getTime'></image>
+          </view>
+
+        </picker>
+        <view class='tip'>{{start_time_tip}}</view>
+      </view>
+
+      <button class='btn_query' type='primary' form-type='submit'>查找</button>
+    </form>
+
+  </view>
+
+  <view class='show' wx:if="{{data.length>0}}">
+    <!--显示查找内容-->
+    <view class='ticket'>
+      <view> 车次</view>
+      <view class='small_ticket'>
+        <view>出发站</view>
+        <view>到达站</view>
+      </view>
+      <view class='small_ticket '>
+        <view>出发时间</view>
+        <view>到达时间</view>
+      </view>
+      <view class="time">历时</view>
+      <view class="time">一等座</view>
+      <view class="time">二等座</view>
+      <view class="time">软卧</view>
+      <view class="time">硬卧</view>
+      <view class="time">硬坐</view>
+    </view>
+    <view wx:for="{{data}}" class='ticket'>
+      {{item.checi}}
+      <view class='small_ticket data_item'>
+        <view>
+          {{item.startPlace}}
+        </view>
+        <view>
+          {{item.arriveplace}}
+        </view>
+      </view>
+      <view class='small_ticket data_item'>
+        <view>
+          {{item.startTime}}
+        </view>
+        <view>
+          {{item.arriveTime}}
+        </view>
+      </view>
+      {{item.lishi}} {{item.yi}} {{item.er}} {{item.ruanwo}} {{item.yingwo}} {{item.yingzuo}}
+    </view>
+
+  </view>
+
+</view>

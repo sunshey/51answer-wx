@@ -1,0 +1,53 @@
+<swiper class='swiper' autoplay indicator-dots indicator-color='#fff' indicator-active-color='#aaa' interval="2000" circular>
+  <block wx:for="{{images}}" wx:key="{{item}}">
+    <swiper-item>
+      <image class='image' src='{{item}}' mode='widthFix'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='search-container'>
+
+
+  <view class='search' hover-class="hover-bg" hover-stay-time="200" bindtap='searchClick'>
+    <view class='search-content'>
+      请输入要搜索的书籍
+    </view>
+    <image class='search-icon' src='../../../images/index-search-icon.png'></image>
+  </view>
+</view>
+
+<view class='hot-book-container'>
+  <view class='search-content'> 热门书籍</view>
+  <view class='hot-book-items' wx:if="{{hotbooks.length>0}}">
+    <view data-item='{{item}}' class='hot-book-item' wx:for="{{hotbooks}}" wx:key="{{item}}" bindtap='toanswerdetail'>
+      <image class='book-cover' mode='widthFix' src='{{item.cover_img}}'></image>
+      <view class='hot-book-name'>{{item.name}}</view>
+    </view>
+    <image class='hot-book-border' src='../../../images/gotomore.jpg' bindtap='filter'></image>
+  </view>
+</view>
+
+
+<view class='hot-book-container'>
+  <view class='search-content'> 热门推荐</view>
+  <view class='hot-recommend-items' wx:if="{{hotrecommends.length>0}}">
+    <view class='hot-recommend-item' data-item='{{item.text}}' wx:for="{{hotrecommends}}" wx:key="{{item}}" style='background-color: {{item.item_bg}}' bindtap='search'>
+      {{item.text}}
+    </view>
+  </view>
+</view>
+
+
+<view class='bottom-scan' bindtap='openscan'>
+  <view class='bottom-scan-container' style='display:{{isFirst}}'>
+    <view class='scan-text'>
+      <view>扫描书本封底右下方</view>
+      <view class='scan-text-content-bottom'>
+        条形码
+        <image class='scan-qr-icon' src='../../../images/qr-icon.png'></image>看答案！
+      </view>
+    </view>
+    <image class='jiao_icon' src='../../../images/jiao-icon.png'></image>
+  </view>
+  <image class='scan-icon' src='../../../images/scancode-icon1.png'></image>
+</view>

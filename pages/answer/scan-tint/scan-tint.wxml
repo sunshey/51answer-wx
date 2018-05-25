@@ -1,0 +1,4 @@
+<image class="image" src='../../../images/tutorial-img.jpg' bindtap="scan">
+
+
+</image>
