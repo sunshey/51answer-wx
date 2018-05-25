@@ -13,14 +13,13 @@
     "pages/answer/scan-tint/scan-tint",
     "pages/testview/testview"
   ],
-  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "51答案",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
-    "backgroundColor":"#F5F5F5"
+    "backgroundColor": "#F5F5F5"
   },
   "tabBar": {
     "selectedColor": "#f00",

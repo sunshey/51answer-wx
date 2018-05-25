@@ -217,7 +217,6 @@ Page({
     //   complete: function (res) { },
     // })
 
-
     wx.checkSession({
       success: function (res) {
         //用户登录信息有效
@@ -238,7 +237,6 @@ Page({
     wx.login({
       success: function (res) {
         if (res.code) {
-        
           wx.setStorageSync("token", res.code)
         }
       },

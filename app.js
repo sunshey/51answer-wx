@@ -51,6 +51,7 @@ App({
     startPlaceholder: "请输入出发的城市",
     arrivePlaceholder: "请输入到达的城市",
     starttimeholder: "请选择出发时间",
+
     // baseUrl:"https://answer.bshu.com/v1/",
     // slide: baseUrl+"slide/index",
     slideUrl: "https://answer.bshu.com/v1/slide/index",
