@@ -202,7 +202,7 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
 }
 ```
 特别注意：after样式使用了`position：absolute`，使用伪类的元素样式中也必须使用`position`属性，否则添加伪元素样式不起作用。
-17.css样式使用flex盒子布局，有几个重要的属性：    
+17. css样式使用flex盒子布局，有几个重要的属性：    
 * flex-direction ; 布局方向 row-横向（默认），column-纵向  
 * flex-wrap; 定义盒子元素如果一条轴线排不下，如何换行，wrap-换行 ， nowrap-不换行（默认）
 * justify-content；定义盒子元素在主轴上对齐方式。   
@@ -217,7 +217,16 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
   * center：交叉轴的中点对齐。  
   * baseline: 项目的第一行文字的基线对齐。  
   * stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。  
-* flex-grow; 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。这个属性主要设置控件占用的空间大小
+* flex-grow; 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。这个属性主要设置控件占用的空间大小  
+18. 小程序共同的属性有：
+```
+id	String	组件的唯一标识	整个页面唯一
+class	String	组件的样式类	在对应的 WXSS 中定义的样式类
+style	String	组件的内联样式	可以动态设置的内联样式
+hidden	Boolean	组件是否显示	所有组件默认显示
+data-*	Any	自定义属性	组件上触发的事件时，会发送给事件处理函数
+bind*/catch*	EventHandler	组件的事件
+```
 
 总结
 ---
