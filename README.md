@@ -220,12 +220,12 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
 * flex-grow; 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。这个属性主要设置控件占用的空间大小  
 18. 小程序共同的属性有：
 ```
-id	             String	     组件的唯一标识	       整个页面唯一
-class	          String	     组件的样式类	         在对应的 WXSS 中定义的样式类
-style	          String	     组件的内联样式	       可以动态设置的内联样式
+id	          String	     组件的唯一标识	       整个页面唯一
+class	         String	     组件的样式类	         在对应的 WXSS 中定义的样式类
+style	         String	     组件的内联样式	       可以动态设置的内联样式
 hidden	         Boolean	    组件是否显示	         所有组件默认显示
 data-*	         Any	        自定义属性	           组件上触发的事件时，会发送给事件处理函数
-bind*/catch*	   EventHandler	组件的事件
+bind*/catch*	 EventHandler	组件的事件
 ```
 
 总结
