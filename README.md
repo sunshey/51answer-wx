@@ -230,6 +230,7 @@ bind*/catch*	 EventHandler	组件的事件
 19. 小程序所有js逻辑跑在同一个JsCore线程中。因此在页面中使用setTimeout或者setInterval的定时器，在跳转到其他页面时，并没有被清除，需要开发者自己在页面离开的时候进行清理。  
 20. 小程序js中生命周期函数顺序onLoad()——onShow()——onReady()——onHide()——onUnload()  
 21. 各个页面之间跳转方法选择，[参考开发文档](https://developers.weixin.qq.com/ebook?action=get_post_info&token=935589521&volumn=1&lang=zh_CN&book=miniprogram&docid=0004eec99acc808b00861a5bd5280a),很重要  
+22. wx.request()网络请求接口中success()、fali()、complete()三个回调方法,最后都会回调到complete()方法中，因此可以将隐藏loading，设置状态等操作放到这个函数中
 
 总结
 ---
