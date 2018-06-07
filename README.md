@@ -227,7 +227,8 @@ hidden	         Boolean	    组件是否显示	         所有组件默认显示
 data-*	         Any	        自定义属性	           组件上触发的事件时，会发送给事件处理函数
 bind*/catch*	 EventHandler	组件的事件
 ```
-19. 小程序所有js逻辑跑在同一个JsCore线程中。因此在页面中使用setTimeout或者setInterval的定时器，在跳转到其他页面时，并没有被清除，需要开发者自己在页面离开的时候进行清理。
+19. 小程序所有js逻辑跑在同一个JsCore线程中。因此在页面中使用setTimeout或者setInterval的定时器，在跳转到其他页面时，并没有被清除，需要开发者自己在页面离开的时候进行清理。  
+20. 小程序js中生命周期函数顺序onLoad()——onShow()——onReady()——onHide()——onUnload()
 
 总结
 ---
