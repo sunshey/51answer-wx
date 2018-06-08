@@ -201,8 +201,8 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
   color: #f5f5f5;
 }
 ```
-特别注意：after样式使用了`position：absolute`，使用伪类的元素样式中也必须使用`position`属性，否则添加伪元素样式不起作用。
-17.css样式使用flex盒子布局，有几个重要的属性：    
+特别注意：after样式使用了`position：absolute`，使用伪类的元素样式中也必须使用`position`属性，否则添加伪元素样式不起作用。  
+17. css样式使用flex盒子布局，有几个重要的属性：    
 * flex-direction ; 布局方向 row-横向（默认），column-纵向  
 * flex-wrap; 定义盒子元素如果一条轴线排不下，如何换行，wrap-换行 ， nowrap-不换行（默认）
 * justify-content；定义盒子元素在主轴上对齐方式。   
@@ -217,7 +217,20 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
   * center：交叉轴的中点对齐。  
   * baseline: 项目的第一行文字的基线对齐。  
   * stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。  
-* flex-grow; 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。这个属性主要设置控件占用的空间大小
+* flex-grow; 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。这个属性主要设置控件占用的空间大小  
+18. 小程序共同的属性有：
+```
+id	          String	     组件的唯一标识	       整个页面唯一
+class	         String	     组件的样式类	         在对应的 WXSS 中定义的样式类
+style	         String	     组件的内联样式	       可以动态设置的内联样式
+hidden	         Boolean	    组件是否显示	         所有组件默认显示
+data-*	         Any	        自定义属性	           组件上触发的事件时，会发送给事件处理函数
+bind*/catch*	 EventHandler	组件的事件
+```
+19. 小程序所有js逻辑跑在同一个JsCore线程中。因此在页面中使用setTimeout或者setInterval的定时器，在跳转到其他页面时，并没有被清除，需要开发者自己在页面离开的时候进行清理。  
+20. 小程序js中生命周期函数顺序onLoad()——onShow()——onReady()——onHide()——onUnload()  
+21. 各个页面之间跳转方法选择，[参考开发文档](https://developers.weixin.qq.com/ebook?action=get_post_info&token=935589521&volumn=1&lang=zh_CN&book=miniprogram&docid=0004eec99acc808b00861a5bd5280a),很重要  
+22. wx.request()网络请求接口中success()、fali()、complete()三个回调方法,最后都会回调到complete()方法中，因此可以将隐藏loading，设置状态等操作放到这个函数中
 
 总结
 ---
