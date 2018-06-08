@@ -231,6 +231,8 @@ bind*/catch*	 EventHandler	组件的事件
 20. 小程序js中生命周期函数顺序onLoad()——onShow()——onReady()——onHide()——onUnload()  
 21. 各个页面之间跳转方法选择，[参考开发文档](https://developers.weixin.qq.com/ebook?action=get_post_info&token=935589521&volumn=1&lang=zh_CN&book=miniprogram&docid=0004eec99acc808b00861a5bd5280a),很重要  
 22. wx.request()网络请求接口中success()、fali()、complete()三个回调方法,最后都会回调到complete()方法中，因此可以将隐藏loading，设置状态等操作放到这个函数中
+23. 小程序中微信登录是一个常见的场景，经常需要登录获取用户信息，基本的交互流程图如下： 
+![](https://github.com/sunshey/51answer-wx/blob/master/login.png)
 
 总结
 ---
