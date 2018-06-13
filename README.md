@@ -177,8 +177,11 @@ module.exports = {
 ```
 is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
 13. 如果模板文件中import其他模板，如果想使用模板的引入的模板文件，可以通过include关键字<br/>
+
 14. 使用通用样式——直接在需要样式的wxss文件中通过@import "../../../template/search.wxss";导入即可<br/>
+
 15. 各个页面js文件Page实例中，可以通过this.route获取当前打开的路径  
+
 16. css伪类元素用法，使用如下：  
 ```
 .dish-item-container {
@@ -202,6 +205,7 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
 }
 ```
 特别注意：after样式使用了`position：absolute`，使用伪类的元素样式中也必须使用`position`属性，否则添加伪元素样式不起作用。  
+
 17. css样式使用flex盒子布局，有几个重要的属性：    
 * flex-direction ; 布局方向 row-横向（默认），column-纵向  
 * flex-wrap; 定义盒子元素如果一条轴线排不下，如何换行，wrap-换行 ， nowrap-不换行（默认）
@@ -218,6 +222,7 @@ is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
   * baseline: 项目的第一行文字的基线对齐。  
   * stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。  
 * flex-grow; 定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。这个属性主要设置控件占用的空间大小  
+
 18. 小程序共同的属性有：
 ```
 id	          String	     组件的唯一标识	       整个页面唯一
@@ -228,13 +233,18 @@ data-*	         Any	        自定义属性	           组件上触发的事件�
 bind*/catch*	 EventHandler	组件的事件
 ```
 19. 小程序所有js逻辑跑在同一个JsCore线程中。因此在页面中使用setTimeout或者setInterval的定时器，在跳转到其他页面时，并没有被清除，需要开发者自己在页面离开的时候进行清理。  
+
 20. 小程序js中生命周期函数顺序onLoad()——onShow()——onReady()——onHide()——onUnload()  
+
 21. 各个页面之间跳转方法选择，[参考开发文档](https://developers.weixin.qq.com/ebook?action=get_post_info&token=935589521&volumn=1&lang=zh_CN&book=miniprogram&docid=0004eec99acc808b00861a5bd5280a),很重要  
 22. wx.request()网络请求接口中success()、fali()、complete()三个回调方法,最后都会回调到complete()方法中，因此可以将隐藏loading，设置状态等操作放到这个函数中  
+
 23. js常见的正则匹配样式是：
 ```\(要替换或匹配的内容)\```,正则表达式不要加""号  
+
 24. 小程序中微信登录是一个常见的场景，经常需要登录获取用户信息，基本的交互流程图如下： 
 ![](https://github.com/sunshey/51answer-wx/blob/master/login.png)
+
 25. 最近小程序在getUserInfo()接口做了调整，直接调用这个接口不会弹出用户授权窗口，因此也无法获取用户信息，这时可以参考下面的解决方案：
 [微信小程序不支持wx.getUserInfo授权的解决方法](http://caibaojian.com/wx-getuserinfo.html) 
 
