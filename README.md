@@ -176,6 +176,7 @@ module.exports = {
 <template is="common" data='{{...item}}'/>
 ```
 is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
+
 13. 如果模板文件中import其他模板，如果想使用模板的引入的模板文件，可以通过include关键字<br/>
 
 14. 使用通用样式——直接在需要样式的wxss文件中通过@import "../../../template/search.wxss";导入即可<br/>
