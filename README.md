@@ -235,6 +235,8 @@ bind*/catch*	 EventHandler	组件的事件
 ```\(要替换或匹配的内容)\```,正则表达式不要加""号  
 24. 小程序中微信登录是一个常见的场景，经常需要登录获取用户信息，基本的交互流程图如下： 
 ![](https://github.com/sunshey/51answer-wx/blob/master/login.png)
+25. 最近小程序在getUserInfo()接口做了调整，直接调用这个接口不会弹出用户授权窗口，因此也无法获取用户信息，这时可以参考下面的解决方案：
+[微信小程序不支持wx.getUserInfo授权的解决方法](http://caibaojian.com/wx-getuserinfo.html) 
 
 总结
 ---
