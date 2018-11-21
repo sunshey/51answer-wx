@@ -175,7 +175,7 @@ module.exports = {
  ```
 <template is="common" data='{{...item}}'/>
 ```
-is后填写模板文件中name所对应的值,item为模板中填入的值<br/>
+is后填写模板文件中name所对应的值,item为模板中填入的值，比如item为uerInfo(代表用户信息),那你就可以直接在模板中使用{{nickName}}来显示用户昵称<br/>
 
 13. 如果模板文件中import其他模板，如果想使用模板的引入的模板文件，可以通过include关键字<br/>
 
